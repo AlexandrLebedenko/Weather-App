@@ -1,0 +1,45 @@
+@use "sass:map";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+$color-white: #f2f5f9;
+$color-black: #030616;
+$color-gray: #20293a;
+$color-blue: #4e80ee;
+$text-styles: (
+  large-text: (
+    font-size: 1.5rem,
+    font-weight: 500,
+    color: $color-white,
+  ),
+  title-text: (
+    font-size: 1.25rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  body-text: (
+    font-size: 1rem,
+    font-weight: 500,
+    color: $color-white,
+  ),
+  tab-text: (
+    font-size: 0.875rem,
+    font-weight: 500,
+    color: $color-white,
+  ),
+  label-text: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+  small-text: (
+    font-size: 0.625rem,
+    font-weight: 400,
+    color: $color-white,
+  ),
+);
+@mixin text-format($type) {
+  $styles: map.get($text-styles, $type);
+  font-family: "Outfit", sans-serif;
+  font-size: map.get($styles, font-size);
+  font-weight: map.get($styles, font-weight);
+  color: map.get($styles, color);
+}
