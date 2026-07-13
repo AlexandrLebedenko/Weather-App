@@ -1,0 +1,10 @@
+@use "@/app/styles/variables" as *;
+.mainPage {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: $color-black;
+  background-image: url("@/assets/backgrounds/earth.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: 0;
+}
