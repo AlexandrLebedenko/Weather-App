@@ -1,10 +1,10 @@
 import styles from "./DailyCard.module.scss";
-function DailyCard({ day, icon, condition, lowTemp, highTemp }) {
+function DailyCard({ day, conditionIcon, condition, lowTemp, highTemp }) {
   return (
     <div className={styles.dailyCard}>
       <p className={styles["dailyCard__day"]}>{day}</p>
       <div className={styles["dailyCard__condition"]}>
-        <img className={styles["dailyCard__condition-icon"]} src={icon} alt="" aria-hidden="true" />
+        <img className={styles["dailyCard__condition-icon"]} src={conditionIcon} alt="" aria-hidden="true" />
         <p className={styles["dailyCard__condition-text"]}>{condition}</p>
       </div>
       <div className={styles["dailyCard__temps"]}>

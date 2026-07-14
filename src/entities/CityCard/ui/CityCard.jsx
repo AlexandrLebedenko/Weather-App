@@ -1,5 +1,5 @@
 import styles from "./CityCard.module.scss";
-function CityCard({ country, city, condition, icon, temp }) {
+function CityCard({ country, city, condition, conditionIcon, temp }) {
   return (
     <div className={styles.cityCard}>
       <div className={styles["cityCard__location"]}>
@@ -8,7 +8,7 @@ function CityCard({ country, city, condition, icon, temp }) {
         <p className={styles["cityCard__location-city-condition"]}>{condition}</p>
       </div>
       <div className={styles["cityCard__condition"]}>
-        <img className={styles["cityCard__condition-icon"]} src={icon} alt="" aria-hidden="true"></img>
+        <img className={styles["cityCard__condition-icon"]} src={conditionIcon} alt="" aria-hidden="true"></img>
         <p className={styles["cityCard__condition-temp"]}>{temp}</p>
       </div>
     </div>
