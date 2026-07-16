@@ -1,0 +1,12 @@
+@use "@/app/styles/variables" as *;
+.cityWeather {
+  &__title {
+    @include text-format(title-text);
+    margin-bottom: 1.25rem;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
