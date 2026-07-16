@@ -19,6 +19,9 @@
   }
   &__location-city-condition {
     @include text-format(label-text);
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
   &__condition {
     display: flex;
