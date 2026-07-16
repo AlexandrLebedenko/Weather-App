@@ -1,8 +1,9 @@
 import axios from "axios";
 const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-export const apiClient = axios.create({
-  baseURL: BASE_URL,
+const WEATHER_BASE_URL = import.meta.env.VITE_WEATHER_BASE_URL;
+const GEO_BASE_URL = import.meta.env.VITE_GEO_BASE_URL;
+export const weatherClient = axios.create({
+  baseURL: WEATHER_BASE_URL,
   timeout: 10000,
   params: {
     appid: API_KEY,
@@ -10,7 +11,17 @@ export const apiClient = axios.create({
     lang: "en",
   },
 });
-apiClient.interceptors.response.use(
-  (response) => response.data,
-  (error) => Promise.reject(error),
-);
+export const geoClient = axios.create({
+  baseURL: GEO_BASE_URL,
+  timeout: 10000,
+  params: {
+    appid: API_KEY,
+    limit: 5,
+  },
+});
+const onResponse = (response) => response.data;
+const onError = (error) => {
+  return Promise.reject(error);
+};
+weatherClient.interceptors.response.use(onResponse, onError);
+geoClient.interceptors.response.use(onResponse, onError);
