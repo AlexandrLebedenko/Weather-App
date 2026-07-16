@@ -1,0 +1,19 @@
+@use "@/app/styles/variables" as *;
+.searchbar {
+  @include text-format(body-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 15rem;
+  padding: 0.5rem;
+  border-radius: 4.75rem;
+  background-color: $color-gray;
+  input {
+    margin-left: 0.75rem;
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px $color-gray inset !important;
+      box-shadow: 0 0 0 30px $color-gray inset !important;
+      -webkit-text-fill-color: $color-white !important;
+    }
+  }
+}
